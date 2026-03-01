@@ -68,8 +68,9 @@ exports.login = (req, res) => {
 };
 
 exports.getEmployees = (req, res) => {
-    db.query('SELECT id, nombre, email FROM usuarios WHERE rol = "empleado"', (err, results) => {
+    db.query('SELECT id, nombre, email FROM usuarios WHERE rol = 'empleado'"', (err, results) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json(results);
     });
 };
+
